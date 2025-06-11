@@ -1,0 +1,160 @@
+
+
+
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+
+<!-- Contenedor Loading -->
+<div id="loading" style="
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: white; display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+">
+  <div id="animacion" style="width: 200px; height: 200px;"></div>
+
+</div>
+
+
+< id="contenido" style="display:none;">   
+
+
+
+
+    
+    <div class="portada-azul">
+  <div class="d-flex justify-content-center align-items-center text-center">
+    <h1 class="titulo-portada-entrada"style="padding: 50px 0">
+    Tu depa ideal, al detalle
+    </h1>
+  </div>
+    </div>
+
+
+
+
+    <div class=" bg-white bodercus" style="margin-top: -30px ; position: relative; padding-top: 50px;  ">
+        {% load static %}
+
+
+
+
+
+
+    <div class="container py-5">
+   
+
+          
+    {% if imagen_destacada %}
+       <img src="{{ imagen_destacada.image.url }}" class="img-fluid bodercus mb-4" alt="Imagen destacada" style="max-width: 800px; width: 100%; height: auto; display: block; margin: 0 auto;">
+
+    {% else %}
+        <img src="{% static 'img/no-image.png' %}" class="img-fluid rounded mb-4" alt="Sin imagen">
+    {% endif %}
+
+
+
+
+
+  <div class="row" style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 10px 20px;">
+
+<div class="col-md-4">
+   <img src="{% static 'rent/img/area.png' %}" alt="Área" style="width: 37px; height: auto; margin-right: 6px;">
+                                {{ depto.area_m2 }} M²
+
+</div>
+
+<div class="col-md-6" >
+  <p><strong>Precio de alquiler:</strong> {{ depto.rent_price }} $/mes</p>
+</div>
+ </div>
+
+
+  <div class="row">
+<div class="col-md-12"></div>
+  {% if depto.comment %}
+        <div class="mt-4">
+            <h5 class="fw-bold">DESCRIPCION</h5>
+            <p>{{ depto.comment }}</p>
+        </div>
+    {% endif %}
+ </div>
+
+    
+    <div class="row">
+        <div class="col-md-6">
+           <h5 class="fw-bold">CARACTERÍSTICAS</h5>
+            
+          
+            <p><strong>Capacidad:</strong> {{ depto.get_capacity_display }}</p>
+             <p><strong>Dormitorios:</strong> {{ depto.num_bedrooms }}</p>
+            <p><strong>Baños:</strong> {{ depto.num_bathrooms }}</p>
+            <p><strong>Cocina:</strong> {{ depto.has_kitchen|yesno:"Sí,No" }}</p>
+        
+          </div>
+        <div class="col-md-6">
+           
+             <h5 class="fw-bold">SERVICIOS INCLUIDOS</h5>
+                {% for servicio in depto.services.all %}
+                    <span class="badge bg-primary">{{ servicio.name }}</span>
+                {% empty %}
+                    <span class="text-muted">Ninguno</span>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+
+  
+</div>
+
+
+
+
+
+
+
+        
+   
+   
+   
+   
+   
+   
+   
+      </div>
+
+        
+
+
+
+
+  
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+  <!-- Carga la librería Lottie desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+  
+  <script src="{% static 'rent/js/custom.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

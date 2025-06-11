@@ -1,0 +1,93 @@
+  .profile-card {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+  }
+
+  .tab-header {
+    display: flex;
+    background: #e5e5e5;
+    padding: 1rem;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .tab-btn.active {
+    background-color: #140a6e;
+  }
+
+  .tab-content {
+    padding: 2rem;
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  .label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .info-box {
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .mt-3 {
+    margin-top: 1rem;
+  }
+
+
+
+  .profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #0059DB;
+  float: left;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}

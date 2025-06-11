@@ -1,0 +1,246 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+
+<div class="portada-azul">
+  <div class="d-flex justify-content-center align-items-center text-center">
+    <h1 class="titulo-portada-entrada">
+      Más que una residencia,<br>
+      Somos el comienzo de tu nueva etapa.
+    </h1>
+  </div>
+</div>
+
+
+
+
+
+
+<div class=" bg-white bodercus" style="margin-top: -30px ; position: relative; padding-top: 50px;  ">
+    {% load static %}
+
+
+
+
+ <div class="container my-5 fade-in-up">
+  <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+    
+    <!-- Video -->
+    <div class="w-100 w-md-50">
+      <div class="ratio ratio-16x9 bodercus ">
+        <iframe class="w-100"
+          src="https://www.youtube.com/embed/wPA-e_1dfMQ?autoplay=1&mute=1&controls=0&loop=1&playlist=wPA-e_1dfMQ"
+          title="Video institucional DepaUni"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Texto -->
+    <div class="w-100 w-md-50">
+      <h2 class="fw-bold display-5 color-titulo text-center">DepaUni</h2>
+     <p class="texto-responsive pt-4">
+        En DepaUni creemos que el alojamiento universitario debe ser más que un lugar para dormir. Buscamos crear un espacio de tranquilidad, comunidad y bienestar.
+      </p>
+      <p class="texto-responsive">
+        Ofrecemos habitaciones cómodas, seguras y junto a la universidad, para que puedas concentrarte en lo que realmente importa: tu etapa universitaria.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="container my-5 ">
+
+        <!-- Nuestra esencia -->
+        <div class=" mb-5 pb-5 fade-in-up"  >
+            <h2 class="fw-bold mb-3 color-titulo display-5 pt-5 ">Nuestra esencia</h2>
+            <p class="texto-responsive">  
+                En DepaUni trabajamos con un propósito claro: ofrecer a los estudiantes un hogar que
+                acompañe su etapa universitaria. Nuestra misión, visión y valores reflejan el
+                compromiso que guía cada una de nuestras acciones y decisiones.
+            </p>
+        </div>
+
+        <!-- Misión, Visión, Valores -->
+        <div class="row text-center ">
+
+
+
+
+<!-- Misión -->
+<div class="col-lg-4 col-sm-6 mb-4 fade-in-left">
+  <div class=" bg-warning position-relative card text-center h-100 border-0  pt-5 pb-5" style=" color: rgb(0, 0, 0); border-radius: 34px;">
+
+    <!-- Ícono centrado y redondeado encima del contenedor -->
+    <div class="position-absolute" 
+         style="top: 0; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; z-index: 1;"
+    >
+      <div class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow" 
+           style="width: 100px; height: 100px;">
+        <img src="{% static 'core/images/icons/1.png' %}" alt="Ícono Misión"
+             class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+      </div>
+    </div>
+
+    <div class="card-body mt-5"> <!-- aumentamos el margen top para compensar el ícono -->
+      <h2 class="card-title fw-bold">Misión</h2>
+      <p class="card-text texto-responsive">
+        Facilitar a los estudiantes un alojamiento seguro, cómodo y accesible,
+        creando una experiencia que apoye su crecimiento personal y profesional.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+            <!-- Visión -->
+
+
+
+<div class="col-lg-4 col-sm-6 mb-4 fade-in-right">
+  <div class=" bg-info position-relative card text-center h-100 border-0  pt-5 pb-5" style=" color: rgb(0, 0, 0); border-radius: 34px;">
+
+    <!-- Ícono centrado y redondeado encima del contenedor -->
+    <div class="position-absolute" 
+         style="top: 0; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; z-index: 1;"
+    >
+      <div class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow" 
+           style="width: 100px; height: 100px;">
+        <img src="{% static 'core/images/icons/2.png' %}" alt="Ícono Misión"
+             class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+      </div>
+    </div>
+
+    <div class="card-body mt-5"> <!-- aumentamos el margen top para compensar el ícono -->
+      <h2 class="card-title fw-bold">Visión</h2>
+      <p class="card-text texto-responsive">
+        Ser líderes en alojamiento universitario, ofreciendo espacios de calidad que impulsen el bienestar y el éxito académico.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Valores -->
+
+
+
+
+<div class="col-lg-4 col-sm-12 mb-4 fade-in-up">
+  <div class="  position-relative card text-center h-100 border-0  pt-5 pb-5 " style=" color: rgb(0, 0, 0); border-radius: 34px; background-color: rgb(56 227 148)">
+
+    <!-- Ícono centrado y redondeado encima del contenedor -->
+    <div class="position-absolute" 
+         style="top: 0; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; z-index: 1;"
+    >
+      <div class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow " 
+           style="width: 100px; height: 100px;">
+        <img src="{% static 'core/images/icons/3.png' %}" alt="Ícono Misión"
+             class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+      </div>
+    </div>
+
+    <div class="card-body mt-5"> <!-- aumentamos el margen top para compensar el ícono -->
+      <h2 class="card-title fw-bold">Valores</h2>
+      <p class="card-text texto-responsive">
+       Nos guiamos por la excelencia, la integridad, el compromiso y la innovación para garantizar un servicio de alta calidad a nuestros residentes.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+           
+
+
+        </div>
+
+       
+
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ¿Por qué elegirnos? -->
+<div class=" bg-light w-100 mt-5 fade-in-up">
+  <div class="container pt-5">
+      <h2 class="fw-bold mb-3 color-titulo display-5 ">¿Por qué elegirnos?</h2>
+    <p class="texto-responsive">
+      En DepaUni trabajamos para que cada estudiante se sienta en casa desde el primer día. Te damos razones reales para elegirnos:
+    </p>
+
+    <div class="row justify-content-center pt-5 pb-5">
+      <!-- Seguridad -->
+      <div class="col-6 col-md-3 mb-4">
+        <div class="bg-white bodercus shadow p-4 d-flex flex-column justify-content-center align-items-center" style="height: 202px;">
+          <i class="bi bi-shield-lock-fill text-primary mb-3" style="font-size: 60px;"></i>
+          <p class="texto-responsive">Seguridad</p>
+        </div>
+      </div>
+
+      <!-- Comodidad -->
+      <div class="col-6 col-md-3 mb-4">
+        <div class="bg-white bodercus shadow p-4 d-flex flex-column justify-content-center align-items-center" style="height: 202px;">
+          <i class="bi bi-cup-hot-fill text-warning mb-3" style="font-size: 60px;"></i>
+          <p class="texto-responsive">Comodidad</p>
+        </div>
+      </div>
+
+      <!-- Ubicación inmejorable -->
+      <div class="col-6 col-md-3 mb-4">
+        <div class="bg-white bodercus shadow p-4 d-flex flex-column justify-content-center align-items-center" style="height: 202px;">
+          <i class="bi bi-geo-alt-fill text-success mb-3" style="font-size: 60px;"></i>
+          <p class="texto-responsive text-center">Ubicación inmejorable</p>
+        </div>
+      </div>
+
+      <!-- Atención personalizada -->
+      <div class="col-6 col-md-3 mb-4">
+        <div class="bg-white bodercus shadow p-4 d-flex flex-column justify-content-center align-items-center" style="height: 202px;">
+          <i class="bi bi-chat-dots-fill text-info mb-3" style="font-size: 60px;"></i>
+          <p class="texto-responsive text-center">Atención personalizada</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

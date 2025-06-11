@@ -1,0 +1,164 @@
+{% extends "resident/base.html" %}
+{% load static %}
+
+{% block title %}Perfil - Resident{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'resident/css/profile.css' %}">
+
+<div   style="min-height: 100vh; border-radius: 0px 34px 34px 34px; background-color: #ffffff; padding: 0; display: flex; flex-direction: column;  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+
+  <!-- Encabezado azul con solo una esquina redondeada -->
+  <div style="background-color: #0059DB; border-bottom-right-radius: 34px; padding: 1.5rem 2rem; width: fit-content;">
+    <h2 class="mb-0 text-white fw-bold">Tu perfil</h2>
+  </div>
+
+  <!-- Texto centrado -->
+  <div class=" px-4 py-5 ">
+    <p class="fw-medium  mb-0" style=" margin: 0 auto; font-size: 20px;">
+      Gestiona tu perfil personal de manera fácil y segura. Consulta y actualiza tu información en todo momento, con total privacidad y control.
+    </p>
+  </div>
+
+
+
+
+
+
+ <!-- ocupa el resto del contendeor padre -->
+  <div class="bg-white" style="border-radius: 34px; flex-grow: 1;">
+
+
+
+
+
+
+
+
+<div class=" py-4">
+
+  <div class="row ">
+
+
+  
+
+    <div class="col-12 col-md-2 text-center" style="display: flex; justify-content: center;">
+      <div class="profile-photo">
+        {% if resident.photo %}
+          <img src="{{ resident.photo.url }}" alt="Foto de perfil">
+        {% else %}
+          <img src="{% static 'img/default-user.png' %}" alt="Sin foto">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8"> 
+  <div class="profile-card">
+
+    <!-- Pestañas -->
+    <div class="tab-header">
+      <div class="tab-btn active" data-tab="datos">Datos Personales</div>
+      <div class="tab-btn" data-tab="contacto">Contacto</div>
+      <div class="tab-btn" data-tab="cuenta">Cuenta</div>
+    </div>
+
+    <!-- Contenido de pestañas -->
+    <div class="tab-content">
+
+      <!-- Datos personales -->
+      <div class="tab-panel active" id="datos">
+        <div class="row">
+          <div class="col">
+            <p class="label">Nombre</p>
+            <div class="info-box">{{ resident.first_name }}</div>
+          </div>
+          <div class="col">
+            <p class="label">Apellidos</p>
+            <div class="info-box">{{ resident.last_name1 }}{% if resident.last_name2 %} {{ resident.last_name2 }}{% endif %}</div>
+          </div>
+          <div class="col">
+            <p class="label">Sexo</p>
+            <div class="info-box">{{ resident.gender }}</div>
+          </div>
+        </div>
+        <p class="label mt-3">DNI</p>
+        <div class="info-box">{{ resident.identity_document }}</div>
+
+      <p class="label mt-3">Fecha de nacimiento</p>
+      <div class="info-box">
+        {{ resident.birth_date|date:"j" }} de {{ resident.birth_date|date:"F"|lower }} de {{ resident.birth_date|date:"Y" }}
+      </div>
+      </div>
+
+      <!-- Contacto -->
+      <div class="tab-panel" id="contacto">
+        <p class="label">Teléfono</p>
+        <div class="info-box">{{ resident.phone|default:"No disponible" }}</div>
+
+        <p class="label mt-3">Email</p>
+        <div class="info-box">{{ resident.user.email }}</div>
+      </div>
+
+      <!-- Cuenta -->
+      <div class="tab-panel" id="cuenta">
+        <p class="label">Usuario</p>
+        <div class="info-box">{{ resident.user.email }}</div>
+
+        <p class="label mt-3">Estado</p>
+        <div class="info-box">Activo</div>
+      </div>
+
+    </div>
+
+  </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<!-- Scripts para tabs -->
+<script>
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remueve activo
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      tabPanels.forEach(panel => panel.classList.remove("active"));
+
+      // Agrega activo
+      button.classList.add("active");
+      document.getElementById(button.dataset.tab).classList.add("active");
+    });
+  });
+</script>
+{% endblock %}

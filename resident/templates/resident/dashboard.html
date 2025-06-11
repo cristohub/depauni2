@@ -1,0 +1,30 @@
+{% extends "resident/base.html" %}
+{% load static %}
+
+{% block title %}Dashboard - Resident{% endblock %}
+
+{% block content %}
+<div class="" style=" height: 100%; border-radius: 0px 0px 34px 34px; overflow: hidden;">
+
+
+  <div class=" text-white  p-4 d-flex justify-content-between align-items-center " style=" border-radius: 0px 0px 34px 34px; background-color: rgb(0 89 219) !important;" >
+    <div>
+      <h2 class="mb-2">Hola, {{ user_name }}!</h2>
+      <p class="mb-0">Nos alegra tenerte de vuelta. Explora tu espacio y gestiona todo de manera rápida y sencilla.</p>
+    </div>
+    <div class="d-none d-md-block">
+      <img src="{% static 'resident/img/avatar_welcome.png' %}" alt="Bienvenida" style="max-height: 100px;">
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+

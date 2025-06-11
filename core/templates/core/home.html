@@ -1,0 +1,296 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+
+
+
+<!-- Sección Portada -->
+<section class=" position-relative w-100 overflow-hidden" style="height: 90vh;">
+  <img src="{% static 'core/images/home/portada.png' %}" alt="foto portada apartamentos"
+       class="portada-img position-absolute top-0 start-0 w-100 h-100"
+       style="object-fit: cover; z-index: 0;">
+  <!-- Contenido -->
+
+
+    <div class="contenido-portada">
+      <div class="bloque-portada">
+          <h2 class="titulo-portada">Residencia Universitaria</h2>
+        
+        <p class="frase efecto-escribir" id="frase"></p>
+        
+        
+        
+      <div class="caja-boton-portada">
+        <a href="{% url 'departamentos' %}" class="boton-portada d-inline-flex align-items-center gap-2">
+          <span>Explorar apartamentos</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.293 1.5a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L13.086 8H1a1 1 0 0 1 0-2h12.086l-2.793-2.793a1 1 0 0 1 0-1.414z"/>
+          </svg>
+        </a>  
+      </div>
+      </div>
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- Segunda sección que se mueve hacia arriba -->
+<section class="bg-white" style="border-radius: 34px; position: relative; top: -40px; ">
+
+  
+ 
+
+
+
+
+  
+  <!-- Sección Habitación Ideal -->
+  <section class="container py-5 habitacion-ideal  ">
+
+    <div class="row g-3">
+
+      <!-- Título -->
+      <article class="col-12 col-md-4 fade-in-left ">
+        <div class=" text-dark rounded-4 h-100 ">
+          <h2 class="fw-bold"> <span class="resaltado"> La Habitación Ideal</span> Para <br> Tu Vida Universitaria.</h2>
+        </div>
+      </article>
+
+      <!-- Tarjeta Azul -->
+      <article class="col-6 col-md-4 fade-in-left">
+        <div class="p-3 bg-info text-dark rounded-4 h-100">
+          <div class="mb-2 fs-3">🏠</div>
+          <h6 class="fw-bold">Espacios Pensados Para Estudiantes</h6>
+          <p>Habitaciones Cómodas, Funcionales Y Hechas Para Tu Día A Día Universitario.</p>
+        </div>
+      </article>
+
+      <!-- Imagen 1 -->
+      <article class="col-6 col-md-4 fade-in-right">
+        <figure class="m-0 h-100">
+          <img src="{% static 'core/images/home/chicos-mudanza.jpg' %}" alt="Estudiantes con cajas"
+            class=" w-100 h-100 rounded-4 " style="object-fit: cover;">
+        </figure>
+      </article>
+
+      <!-- Tarjeta Amarilla -->
+      <article class="col-6 col-md-4 order-md-0 order-1 fade-in-left">
+        <div class="p-3 bg-warning text-dark rounded-4 h-100">
+          <div class="mb-2 fs-3">💡</div>
+          <h6 class="fw-bold">Todo Incluido</h6>
+          <p>Luz, Agua, Internet Y Mantenimiento, Todo Dentro De Tu Renta Mensual.</p>
+        </div>
+      </article>
+
+      <!-- Imagen 2 -->
+      <article class="col-6 col-md-4 order-md-1 order-2  fade-in-up">
+        <figure class="m-0 h-100">
+          <img src="{% static 'core/images/home/mujer-estudiante-que-sostiene-piggybank.jpg' %}" alt="Estudiante feliz"
+            class=" w-100 h-100 rounded-4 " style="object-fit: cover;">
+        </figure>
+      </article>
+
+      <!-- Tarjeta Verde -->
+      <article class="col-12 col-md-4 order-md-2 order-0 fade-in-right">
+        <div class="p-3 bg-success text-white rounded-4 h-100">
+          <div class="mb-2 fs-3">💻</div>
+          <h6 class="fw-bold">Reserva 100% Online</h6>
+          <p>Elige Tu Habitación Y Resérvala Desde Cualquier Lugar, Sin Trámites.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Sección callAccion -->
+  <section class="w-100  fade-in-up  " style="background: linear-gradient(90deg, #77ebff, #3C77FF); color: white;">
+    <div class="d-flex flex-column-reverse flex-md-row align-items-center justify-content-center px-3">
+
+      <!-- Imagen -->
+      <div class="me-4 mb-md-0">
+        <img src="{% static 'core/images/home/mujerFeliz.png' %}" alt="Persona feliz" class="img-fluid"
+          style="max-height: 356px;">
+      </div>
+
+      <!-- Texto -->
+      <div class="text-center px-4  texto-pad" style="max-width: 100%; width: 868px;">
+        <h2 class="fw-bold mb-2 banner-title">¡Únete A DepaUni!</h2>
+        <p class="fs-4 fw-bold mb-3 text-dark">Los Mejores Apartamentos Para Estudiantes</p>
+        <a href="{% url 'contact' %}" class="btn btn-warning fw-bold px-4 py-2 rounded-pill  pulse-btn">
+          RESERVAR <span>&#10140;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Sección de Testimonios -->
+  <section class="container py-5 testimono fade-in-up" id="student-section">
+
+
+    <div class="row">
+      <h3 class="fw-bold mb-5">Lo que dicen nuestros estudiantes</h3>
+    </div>
+
+
+    <div class="row align-items-center justify-content-center">
+
+
+
+      <div class="position-relative d-flex justify-content-center"
+        style="max-width: 400px; margin: auto; height: 330px;">
+        <!-- Estudiante 1 -->
+        <div class="position-absolute rounded-4 overflow-hidden"
+          style="top: 0; left: 20px; width: 150px; height: 150px;">
+          <img src="{% static 'core/images/home/testimonioHombre.jpg' %}" class="w-100 h-100" style="object-fit: cover;"
+            alt="Estudiante 1">
+        </div>
+
+        <!-- Estudiante 2 -->
+        <div class="position-absolute rounded-4 overflow-hidden"
+          style="top: 0; right: 20px; width: 150px; height: 150px;">
+          <img src="{% static 'core/images/home/hombre-sentado.jpg' %}" class="w-100 h-100" style="object-fit: cover;"
+            alt="Estudiante 2">
+        </div>
+
+        <!-- Estudiante 3 -->
+        <div class="position-absolute rounded-4 overflow-hidden"
+          style="bottom: 0; left: 50%; transform: translateX(-50%); width: 150px; height: 150px;">
+          <img src="{% static 'core/images/home/testimonioMujer.jpg' %}" class="w-100 h-100" style="object-fit: cover;"
+            alt="Estudiante 3">
+        </div>
+
+        <!-- Cartel central -->
+     <div class="position-absolute top-50 start-50 translate-middle text-center bg-primary text-white px-3 py-2  shadow fw-bold" style="font-size: 30px; border-radius: 34px;">
+      <span id="student-counter">0</span><br>Estudiantes
+    </div>
+
+
+      </div>
+
+
+      <!-- Carrusel tipo papelitos -->
+      <div class="col-md-5 py-5 d-flex justify-content-center flex-column">
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+          <div class="carousel-inner text-center mb-5 containerTesti">
+
+           {% for testimonio in testimonios %}
+        <div class="carousel-item mt-3 {% if forloop.first %}active{% endif %}">
+          <div class="notita {% cycle 'color1' 'color2' 'color3' %}" style="{% if forloop.counter == 2 %}transform: rotate(2deg);{% elif forloop.counter == 3 %}transform: rotate(-3deg);{% endif %}">
+           
+            <p class="mb-3">{{ testimonio.comentario }}</p>
+            <div class="d-flex justify-content-center align-items-center">
+              {% if testimonio.residente.photo %}
+                <img src="{{ testimonio.residente.photo.url }}" alt="{{ testimonio.residente }}">
+              {% else %}
+                <img src="{% static 'core/images/default-user.jpg' %}" alt="Residente">
+              {% endif %}
+              <strong>{{ testimonio.residente.first_name }}</strong>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+          
+
+            <!-- Flechas de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+              data-bs-slide="prev" style="width: 5%;">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+              data-bs-slide="next" style="width: 5%;">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+
+
+          </div>
+
+
+
+
+        <!-- Indicadores de progreso tipo historias -->
+        <div class="carousel-indicators d-flex justify-content-center gap-1 mt-3">
+          {% for testimonio in testimonios %}
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ forloop.counter0 }}"
+              class="progress-indicator {% if forloop.first %}active{% endif %}"
+              aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-label="Slide {{ forloop.counter }}">
+            </button>
+          {% endfor %}
+        </div>
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+{% endblock %}
+
+

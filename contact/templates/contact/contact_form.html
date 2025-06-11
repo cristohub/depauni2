@@ -1,0 +1,99 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+
+
+{% load static %}
+
+
+
+
+
+<div class="portada-azul">
+  <div class="d-flex justify-content-center align-items-center text-center">
+    <h1 class="titulo-portada-entrada "style="padding: 50px 0">
+      Contacta con DepaUni
+    </h1>
+  </div>
+</div>
+
+
+
+
+
+<div class="bg-white bodercus" style="margin-top: -30px; position: relative; padding-top: 50px;">
+  <div class="container py-5  fade-in-up">
+    <div class="row align-items-stretch g-4">
+      
+      <!-- Columna del formulario -->
+      <div class="col-md-6">
+        <div class="p-4 shadow-lg rounded-4 h-100 border bg-light">
+         
+          <p class="text-center text-muted mb-4">¿Tienes dudas o necesitas ayuda? ¡Envíanos tu mensaje!</p>
+
+          <form id="contact-form" method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+
+           <div class="row mb-3">
+            <div class="col-md-6 col-12">
+              <label class="form-label">Nombre</label>
+              {{ form.first_name }}
+            </div>
+            <div class="col-md-6 col-12">
+              <label class="form-label">Apellido</label>
+              {{ form.last_name }}
+            </div>
+          </div>
+
+          
+            <div class="mb-3">
+              <label class="form-label">Correo Electrónico</label>
+              {{ form.email }}
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Teléfono</label>
+              {{ form.phone }}
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Comentario</label>
+              {{ form.comment }}
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+      <!-- Columna del mapa -->
+      <div class="col-md-6 ">
+        <div class="p-2 h-100 bodercus  m-0 p-0 ">
+          <div class="ratio ratio-4x3 bodercus overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12141.222201459037!2d-3.7005674696793314!3d40.46850484480086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229119d6d1efb%3A0xe745694026749a97!2sC.%20de%20San%20Benito%2C%206%2C%20Tetu%C3%A1n%2C%2028029%20Madrid!5e0!3m2!1ses!2ses!4v1748720682400!5m2!1ses!2ses"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'contact/js/contact.js' %}"></script>
+{% endblock %}
+
+
+
+

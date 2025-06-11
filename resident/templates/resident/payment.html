@@ -1,0 +1,126 @@
+{% extends "resident/base.html" %}
+{% load static %}
+
+{% block title %}Perfil - Resident{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'resident/css/profile.css' %}">
+
+<div   style="min-height: 100vh; border-radius: 0px 34px 34px 34px; background-color: #ffffff; padding: 0; display: flex; flex-direction: column;  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+
+  <!-- Encabezado azul con solo una esquina redondeada -->
+  <div style="background-color: #0059DB; border-bottom-right-radius: 34px; padding: 1.5rem 2rem; width: fit-content;">
+    <h2 class="mb-0 text-white fw-bold">Tus pagos</h2>
+  </div>
+
+  <!-- Texto centrado -->
+  <div class=" px-4 py-5 ">
+    <p class="fw-medium  mb-0" style=" margin: 0 auto; font-size: 20px;">
+    Revisa tus pagos de alquiler de forma clara y organizada. Accede a tu información en cualquier momento, con total privacidad y control sobre tus datos.
+    </p>
+  </div>
+
+
+
+
+
+
+ <!-- ocupa el resto del contendeor padre -->
+  <div class="bg-white" style="border-radius: 34px; flex-grow: 1;">
+
+
+
+
+
+  <div class="table-responsive px-4  pb-4" >
+    <table class="table table-striped table-hover align-middle text-center" style="min-width: 700px;">
+      <thead class="table-primary">
+        <tr>
+         <th style="position: sticky; left: 0; background-color: #f6f3f8; z-index: 2; border-top-left-radius: 10px;">n°</th>
+         
+          
+         <th>Fecha de Pago</th>
+          <th>Periodo</th>
+          <th>Estado</th>
+           <th>Método</th>
+          
+          <th style="border-top-right-radius: 10px;">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pago in payments %}
+        <tr>
+          <td style="position: sticky; left: 0; background-color: #fff;">{{ pago.id}}</td>
+       
+         
+          <td>{{ pago.fecha_pago|default:"—" }}</td>
+          <td>{{ pago.fecha_desde }}<br>al {{ pago.fecha_hasta }}</td>
+         
+           <td>
+            <span class="badge 
+              {% if pago.estado == 'pagado' %}
+                bg-success
+              {% elif pago.estado == 'pendiente' %}
+                bg-warning text-dark
+              {% else %}
+                bg-secondary
+              {% endif %}
+            ">
+              {{ pago.get_estado_display }}
+            </span>
+          </td>
+          <td>{{ pago.get_metodo_pago_display }}</td>
+          <td>{{ pago.monto }} €</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
